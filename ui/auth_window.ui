@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
+    <class>AuthorizeWindow</class>
+    <widget class="QMainWindow" name="AuthorizeWindow">
         <property name="geometry">
             <rect>
                 <x>0</x>
@@ -97,7 +97,7 @@
         <connection>
             <sender>pushButton</sender>
             <signal>clicked()</signal>
-            <receiver>MainWindow</receiver>
+            <receiver>AuthorizeWindow</receiver>
             <slot>sign_in()</slot>
             <hints>
                 <hint type="sourcelabel">
