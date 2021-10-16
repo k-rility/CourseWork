@@ -1,36 +1,37 @@
-#ifndef AUTHORIZEWINDOW_H
-#define AUTHORIZEWINDOW_H
+#ifndef AUTH_WINDOW_HPP
+#define AUTH_WINDOW_HPP
 
-#include <QMainWindow>
-#include <QtWidgets>
-#include <QSqlTableModel>
-
-#include "auth_database.hpp"
+#include <QMessageBox>
+#include <QWidget>
+#include <QString>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QDebug>
+#include <QSqlRecord>
+#include <QFile>
 
 namespace Ui {
-    class AuthorizeWindow;
+    class auth_window;
 }
 
-class AuthorizeWindow:public QMainWindow{
-
+class auth_window : public QWidget {
 Q_OBJECT
 public:
+    explicit auth_window(QWidget *parent = nullptr);
 
-    explicit AuthorizeWindow(QWidget*parent=nullptr);
+    ~auth_window();
 
-    ~AuthorizeWindow();
+    bool connect_auth_DataBase();
 
 private slots:
 
     void sign_in();
-private:
 
-    void setupModel(const QString&,const QStringList&);
 private:
-
-    Ui::AuthorizeWindow*ui;
-    password_DataBase*db;
-    QSqlTableModel*model;
+    Ui::auth_window *ui;
+    QSqlDatabase auth_db;
 };
 
-#endif // AUTHORIZEWINDOW_H
+#endif //AUTH_WINDOW_HPP

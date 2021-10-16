@@ -1,28 +1,49 @@
 #include "include/auth_window.hpp"
-#include "ui_auth_window.h"
-#include <QMessageBox>
-#include <QString>
+#include "../ui/ui_auth_window.h"
 
-AuthorizeWindow::AuthorizeWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::AuthorizeWindow) {
+auth_window::auth_window(QWidget *parent) : QWidget(parent), ui(new Ui::auth_window) {
+    if (!connect_auth_DataBase()) {
+        qDebug() << "Failed to connect DataBase";
+    }
     ui->setupUi(this);
-//        db=new password_DataBase(this);
-//        db->connect_to_DataBase();
 }
 
-AuthorizeWindow::~AuthorizeWindow() {
+auth_window::~auth_window() {
     delete ui;
 }
 
+bool auth_window::connect_auth_DataBase() {
+    auth_db = QSqlDatabase::addDatabase("QSQLITE");
+    QString database_path = "/home/kirill/Рабочий стол/database/sound_recording_studio.db";
+    if (!QFile(database_path).exists()) {
+        qDebug() << "Cannot open DataBase: " << auth_db.lastError();
+        return false;
+    }
+    auth_db.setDatabaseName(database_path);
+    if (!auth_db.open()) {
+        qDebug() << "Cannot open DataBase: " << auth_db.lastError();
+        return false;
+    }
+    return true;
+}
 
-void AuthorizeWindow::sign_in() {
+void auth_window::sign_in() {
     QSqlQuery query;
-    QString login = ui->login_line->text();
-    QString password = ui->password_line->text();
-    db = new password_DataBase(this);
-    db->connect_to_DataBase();
-    if (query.exec("SELECT * FROM passwords WHERE PASSWORD=""+arg+") == login && "qwerty1234" == password) {
-        QMessageBox::about(this, "Authorize", "successful authorize");
+    QString login = ui->lofin_edit_line->text();
+    QString password = ui->password_edit_line->text();
+    QString str_t = " SELECT * FROM passwords WHERE LOGIN = '%1' ";
+    if (!query.exec(str_t.arg(login))) {
+        qDebug() << "Error";
+    }
+    QSqlRecord rec = query.record();
+    query.next();
+
+    if (login != query.value(rec.indexOf("LOGIN")).toString() ||
+        password != query.value(rec.indexOf("PASSWORD")).toString()) {
+        QMessageBox::warning(this, "Authorize", "Nosuccessful authorize");
+    } else if (login == "" || password == "") {
+        QMessageBox::warning(this, "Authorize", "Nouccessful authorize");
     } else {
-        QMessageBox::warning(this, "Authorize", "nosuccessful authorize");
+        QMessageBox::about(this, "Authorize", "Successful authorize");
     }
 }
