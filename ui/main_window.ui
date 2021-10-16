@@ -11,21 +11,8 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>main_window</string>
+   <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>200</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>regular customers</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>

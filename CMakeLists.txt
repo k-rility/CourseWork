@@ -21,8 +21,8 @@ if (ANDROID)
             include/auth_window.hpp
             ui/auth_window.ui
 
-            sources/auth_database.cpp
-            include/auth_database.hpp
+            sources/data_base.cpp
+            include/data_base.hpp
 
             include/main_window.hpp
             sources/main_window.cpp
@@ -35,8 +35,8 @@ else ()
             include/auth_window.hpp
             ui/auth_window.ui
 
-            sources/auth_database.cpp
-            include/auth_database.hpp
+            sources/data_base.cpp
+            include/data_base.hpp
 
             include/main_window.hpp
             sources/main_window.cpp

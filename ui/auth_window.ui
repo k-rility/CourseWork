@@ -13,48 +13,38 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>321</width>
-     <height>141</height>
+     <x>199</x>
+     <y>120</y>
+     <width>371</width>
+     <height>151</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
     <item row="0" column="0">
-     <widget class="QLabel" name="login_label">
+     <widget class="QLabel" name="label_login">
       <property name="text">
        <string>Login</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLabel" name="password_label">
+     <widget class="QLabel" name="label_password">
       <property name="text">
        <string>Password</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lofin_edit_line"/>
+     <widget class="QLineEdit" name="lineEdit_login"/>
     </item>
     <item row="2" column="1">
-     <widget class="QLineEdit" name="password_edit_line">
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="lineEdit_password"/>
     </item>
     <item row="4" column="0" colspan="2">
-     <widget class="QPushButton" name="sign_in_btn">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
+     <widget class="QPushButton" name="pushButton_sign_in">
       <property name="text">
        <string>Sign in</string>
       </property>
@@ -92,23 +82,23 @@
  <resources/>
  <connections>
   <connection>
-   <sender>sign_in_btn</sender>
+   <sender>pushButton_sign_in</sender>
    <signal>clicked()</signal>
    <receiver>auth_window</receiver>
-   <slot>sign_in()</slot>
+   <slot>sign_in_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>324</x>
-     <y>296</y>
+     <x>391</x>
+     <y>252</y>
     </hint>
     <hint type="destinationlabel">
-     <x>350</x>
-     <y>316</y>
+     <x>368</x>
+     <y>299</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>sign_in()</slot>
+  <slot>sign_in_clicked()</slot>
  </slots>
 </ui>

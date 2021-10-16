@@ -1,8 +1,12 @@
-#ifndef COURSE_WORK_MAIN_WINDOW_HPP
-#define COURSE_WORK_MAIN_WINDOW_HPP
+#ifndef MAIN_WINDOW_HPP
+#define MAIN_WINDOW_HPP
 
-#include <QMainWindow>
 #include <QWidget>
+#include <QMainWindow>
+#include <QMessageBox>
+
+#include "include/auth_window.hpp"
+#include "include/data_base.hpp"
 
 namespace Ui {
     class main_window;
@@ -11,17 +15,19 @@ namespace Ui {
 class main_window : public QMainWindow {
 Q_OBJECT
 public:
-
     explicit main_window(QWidget *parent = nullptr);
 
     ~main_window();
 
-private slots:
+    void sign_in();
 
-    void regular_customers();
+private slots:
 
 private:
     Ui::main_window *ui_main;
+    auth_window ui_auth;
+private:
+    data_base __data_base;
 };
 
-#endif //COURSE_WORK_MAIN_WINDOW_HPP
+#endif //MAIN_WINDOW_HPP

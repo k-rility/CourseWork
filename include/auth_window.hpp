@@ -1,37 +1,41 @@
 #ifndef AUTH_WINDOW_HPP
 #define AUTH_WINDOW_HPP
 
-#include <QMessageBox>
 #include <QWidget>
 #include <QString>
-#include <QSql>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
-#include <QSqlRecord>
-#include <QFile>
+#include <QPushButton>
+
+#include "include/data_base.hpp"
 
 namespace Ui {
     class auth_window;
 }
 
 class auth_window : public QWidget {
+
 Q_OBJECT
 public:
     explicit auth_window(QWidget *parent = nullptr);
 
     ~auth_window();
 
-    bool connect_auth_DataBase();
+    QString EditLine_login();
+
+    QString EditLine_password();
+
+    QPushButton *get_push_btn();
+
+
+signals:
+
+    void clicked();
 
 private slots:
 
-    void sign_in();
+    void sign_in_clicked();
 
 private:
-    Ui::auth_window *ui;
-    QSqlDatabase auth_db;
+    Ui::auth_window *ui_auth;
 };
 
 #endif //AUTH_WINDOW_HPP
