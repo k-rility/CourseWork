@@ -27,6 +27,10 @@ if (ANDROID)
             include/main_window.hpp
             sources/main_window.cpp
             ui/main_window.ui
+
+            include/reg_customers_window.hpp
+            sources/reg_customers_window.cpp
+            ui/reg_customers_window.ui
             )
 else ()
     add_executable(course_work
@@ -41,6 +45,10 @@ else ()
             include/main_window.hpp
             sources/main_window.cpp
             ui/main_window.ui
+
+            include/reg_customers_window.hpp
+            sources/reg_customers_window.cpp
+            ui/reg_customers_window.ui
             )
 endif ()
 

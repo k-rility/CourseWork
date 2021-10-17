@@ -13,7 +13,43 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <widget class="QPushButton" name="pushButton_reg_customers">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>240</y>
+     <width>351</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>Regular customers</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_reg_customers</sender>
+   <signal>clicked()</signal>
+   <receiver>main_window</receiver>
+   <slot>reg_customers_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>reg_customers_clicked()</slot>
+ </slots>
 </ui>

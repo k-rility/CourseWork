@@ -45,6 +45,9 @@
     </item>
     <item row="4" column="0" colspan="2">
      <widget class="QPushButton" name="pushButton_sign_in">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="text">
        <string>Sign in</string>
       </property>
@@ -88,7 +91,7 @@
    <sender>pushButton_sign_in</sender>
    <signal>clicked()</signal>
    <receiver>auth_window</receiver>
-   <slot>on_sign_in_clicked()</slot>
+   <slot>_sign_in_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>320</x>
@@ -102,6 +105,6 @@
   </connection>
  </connections>
  <slots>
-  <slot>on_sign_in_clicked()</slot>
+  <slot>_sign_in_clicked()</slot>
  </slots>
 </ui>

@@ -26,12 +26,11 @@ public:
 
 signals:
 
-
     void sign_in_clicked();
 
 private slots:
 
-    void on_sign_in_clicked();
+    void _sign_in_clicked();
 
 private:
     Ui::auth_window *ui_auth;

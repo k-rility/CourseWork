@@ -28,7 +28,7 @@ QString &auth_window::EditLine_password() {
     return password;
 }
 
-void auth_window::on_sign_in_clicked() {
+void auth_window::_sign_in_clicked() {
     on_lineEdit_login(ui_auth->lineEdit_login->text());
     on_lineEdit_password(ui_auth->lineEdit_password->text());
     emit sign_in_clicked();
