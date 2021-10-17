@@ -3,33 +3,12 @@
 
 #include <QWidget>
 #include <QSqlTableModel>
+#include "include/main_window_interface.hpp"
 
 
 namespace Ui { class booking_window; }
 
-class booking_window : public QWidget {
-Q_OBJECT
-
-public:
-    explicit booking_window(QWidget *parent = nullptr);
-
-    ~booking_window();
-
-    void setupModel(const QString &, const QStringList &);
-
-    void createUi();
-
-signals:
-
-    void back_clicked();
-
-private slots:
-
-    void back();
-
-private:
-    Ui::booking_window *ui;
-    QSqlTableModel *model;
+class booking_window : public main_window_interface {
 };
 
 

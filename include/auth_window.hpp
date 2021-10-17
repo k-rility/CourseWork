@@ -20,9 +20,9 @@ public:
 
     void on_lineEdit_password(const QString &);
 
-    QString& EditLine_login();
+    QString &EditLine_login();
 
-    QString& EditLine_password();
+    QString &EditLine_password();
 
 signals:
 

@@ -35,6 +35,10 @@ if (ANDROID)
             include/booking_window.hpp
             sources/booking_window.cpp
             ui/booking_window.ui
+
+            include/main_window_interface.hpp
+            sources/main_window_interface.cpp
+            ui/main_window_interface.ui
             )
 else ()
     add_executable(course_work
@@ -57,6 +61,10 @@ else ()
             include/booking_window.hpp
             sources/booking_window.cpp
             ui/booking_window.ui
+
+            include/main_window_interface.hpp
+            sources/main_window_interface.cpp
+            ui/main_window_interface.ui
             )
 endif ()
 

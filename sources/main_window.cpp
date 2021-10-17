@@ -16,12 +16,12 @@ main_window::main_window(QWidget *parent) : QMainWindow(parent), ui_main(new Ui:
     ui_reg_customers.createUi();
 
     ui_book.setupModel("studios",
-                                QStringList()
-                                        << trUtf8("ID")
-                                        << trUtf8("user_id")
-                                        << trUtf8("Date")
-                                        << trUtf8("Time")
-                                        << trUtf8("Status"));
+                       QStringList()
+                               << trUtf8("ID")
+                               << trUtf8("user_id")
+                               << trUtf8("Date")
+                               << trUtf8("Time")
+                               << trUtf8("Status"));
     ui_book.createUi();
 
     ui_main->setupUi(this);
@@ -74,8 +74,7 @@ void main_window::sign_in() {
     } else if (login == "" || password == "") {
         QMessageBox::warning(this, "Authorize", "NOsuccessful authorize");
     } else {
-        QMessageBox::about(this, "Authorize", "successful authorize");
-        ui_auth.hide();
+        ui_auth.close();
         this->show();
     }
 }
