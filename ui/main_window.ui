@@ -74,8 +74,25 @@ border-radius:20px;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>main_window</receiver>
+   <slot>booking_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>495</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>reg_customers_clicked()</slot>
+  <slot>booking_clicked()</slot>
  </slots>
 </ui>

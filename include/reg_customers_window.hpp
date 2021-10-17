@@ -24,9 +24,13 @@ public:
 
     void createUi();
 
-//private slots:
+signals:
 
-//    void back();
+    void back_clicked();
+
+private slots:
+
+    void back();
 
 private:
 

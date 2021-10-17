@@ -7,6 +7,7 @@
 
 #include "include/auth_window.hpp"
 #include "include/reg_customers_window.hpp"
+#include "include/booking_window.hpp"
 #include "include/data_base.hpp"
 
 namespace Ui {
@@ -27,13 +28,20 @@ public slots:
 
     void reg_customers_clicked();
 
+    void booking_clicked();
+
     void sign_in();
+
+    void back_main_window_from_reg_customers();
+
+    void back_main_window_from_booking();
 
 private:
     //user interface
     Ui::main_window *ui_main;
     auth_window ui_auth;
     reg_customers_window ui_reg_customers;
+    booking_window ui_book;
 private:
     //database
     data_base __data_base;

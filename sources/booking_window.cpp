@@ -1,19 +1,22 @@
-#include "include/reg_customers_window.hpp"
-#include "../ui/ui_reg_customers_window.h"
 
-reg_customers_window::reg_customers_window(QWidget *parent) : QWidget(parent), ui(new Ui::reg_customers_window) {
+#include "include/booking_window.hpp"
+#include "../ui/ui_booking_window.h"
+
+
+booking_window::booking_window(QWidget *parent) :
+        QWidget(parent), ui(new Ui::booking_window) {
     ui->setupUi(this);
 }
 
-reg_customers_window::~reg_customers_window() noexcept {
+booking_window::~booking_window() {
     delete ui;
 }
 
-void reg_customers_window::back() {
+void booking_window::back() {
     emit back_clicked();
 }
 
-void reg_customers_window::setupModel(const QString &table_name, const QStringList &headers) {
+void booking_window::setupModel(const QString &table_name, const QStringList &headers) {
 
     model = new QSqlTableModel(this);
     model->setTable(table_name);
@@ -23,7 +26,7 @@ void reg_customers_window::setupModel(const QString &table_name, const QStringLi
     model->setSort(0, Qt::AscendingOrder);
 }
 
-void reg_customers_window::createUi() {
+void booking_window::createUi() {
     ui->tableView->setModel(model);
 
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -36,3 +39,5 @@ void reg_customers_window::createUi() {
 
     model->select();
 }
+
+

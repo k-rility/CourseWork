@@ -2,13 +2,27 @@
 #include "../ui/ui_main_window.h"
 
 main_window::main_window(QWidget *parent) : QMainWindow(parent), ui_main(new Ui::main_window) {
+
     if (!__data_base.connect_to_data_base()) {
         qDebug() << "Could not connecting to DataBase";
     }
-    QObject::connect(&ui_auth, &auth_window::sign_in_clicked, this, &main_window::sign_in);
 
-    ui_reg_customers.setupModel("reg_customers", QStringList() << trUtf8("user_id") << trUtf8("Regular customers"));
+    QObject::connect(&ui_auth, &auth_window::sign_in_clicked, this, &main_window::sign_in);
+    QObject::connect(&ui_reg_customers, &reg_customers_window::back_clicked, this,
+                     &main_window::back_main_window_from_reg_customers);
+    QObject::connect(&ui_book, &booking_window::back_clicked, this, &main_window::back_main_window_from_booking);
+
+    ui_reg_customers.setupModel("reg_customers", QStringList() << trUtf8("ID") << trUtf8("Regular customers"));
     ui_reg_customers.createUi();
+
+    ui_book.setupModel("studios",
+                                QStringList()
+                                        << trUtf8("ID")
+                                        << trUtf8("user_id")
+                                        << trUtf8("Date")
+                                        << trUtf8("Time")
+                                        << trUtf8("Status"));
+    ui_book.createUi();
 
     ui_main->setupUi(this);
 }
@@ -24,6 +38,21 @@ void main_window::auth_show() {
 void main_window::reg_customers_clicked() {
     this->hide();
     ui_reg_customers.show();
+}
+
+void main_window::booking_clicked() {
+    this->hide();
+    ui_book.show();
+}
+
+void main_window::back_main_window_from_reg_customers() {
+    ui_reg_customers.close();
+    this->show();
+}
+
+void main_window::back_main_window_from_booking() {
+    ui_book.close();
+    this->show();
 }
 
 void main_window::sign_in() {
