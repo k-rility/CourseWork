@@ -13,20 +13,46 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(46, 52, 54)</string>
+  </property>
   <widget class="QPushButton" name="pushButton_reg_customers">
    <property name="geometry">
     <rect>
      <x>360</x>
      <y>240</y>
      <width>351</width>
-     <height>25</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(211, 215, 207);
+border: 2px solid rgb(211, 215, 207);
+border-radius:20px;</string>
+   </property>
    <property name="text">
     <string>Regular customers</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>290</y>
+     <width>351</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(211, 215, 207);
+border: 2px solid rgb(211, 215, 207);
+border-radius:20px;</string>
+   </property>
+   <property name="text">
+    <string>Booking</string>
    </property>
   </widget>
  </widget>

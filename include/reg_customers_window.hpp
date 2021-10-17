@@ -24,6 +24,10 @@ public:
 
     void createUi();
 
+//private slots:
+
+//    void back();
+
 private:
 
     Ui::reg_customers_window *ui;
