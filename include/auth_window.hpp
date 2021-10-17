@@ -3,9 +3,6 @@
 
 #include <QWidget>
 #include <QString>
-#include <QPushButton>
-
-#include "include/data_base.hpp"
 
 namespace Ui {
     class auth_window;
@@ -19,23 +16,27 @@ public:
 
     ~auth_window();
 
-    QString EditLine_login();
+    void on_lineEdit_login(const QString &);
 
-    QString EditLine_password();
+    void on_lineEdit_password(const QString &);
 
-    QPushButton *get_push_btn();
+    QString& EditLine_login();
 
+    QString& EditLine_password();
 
 signals:
 
-    void clicked();
-
-private slots:
 
     void sign_in_clicked();
 
+private slots:
+
+    void on_sign_in_clicked();
+
 private:
     Ui::auth_window *ui_auth;
+    QString login;
+    QString password;
 };
 
 #endif //AUTH_WINDOW_HPP

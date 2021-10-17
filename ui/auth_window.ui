@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>AuthorizeWindow</string>
   </property>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -47,6 +47,9 @@
      <widget class="QPushButton" name="pushButton_sign_in">
       <property name="text">
        <string>Sign in</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -85,20 +88,20 @@
    <sender>pushButton_sign_in</sender>
    <signal>clicked()</signal>
    <receiver>auth_window</receiver>
-   <slot>sign_in_clicked()</slot>
+   <slot>on_sign_in_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>391</x>
-     <y>252</y>
+     <x>320</x>
+     <y>259</y>
     </hint>
     <hint type="destinationlabel">
-     <x>368</x>
-     <y>299</y>
+     <x>454</x>
+     <y>273</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>sign_in_clicked()</slot>
+  <slot>on_sign_in_clicked()</slot>
  </slots>
 </ui>

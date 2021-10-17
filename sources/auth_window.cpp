@@ -3,26 +3,34 @@
 
 #include "include/main_window.hpp"
 
+
 auth_window::auth_window(QWidget *parent) : QWidget(parent), ui_auth(new Ui::auth_window) {
     ui_auth->setupUi(this);
 }
 
-auth_window::~auth_window() {
+auth_window::~auth_window() noexcept {
     delete ui_auth;
 }
 
-QString auth_window::EditLine_login() {
-    return ui_auth->lineEdit_login->text();
+void auth_window::on_lineEdit_login(const QString &in_edit_line_login) {
+    login = in_edit_line_login;
 }
 
-QString auth_window::EditLine_password() {
-    return ui_auth->lineEdit_password->text();
+void auth_window::on_lineEdit_password(const QString &in_edit_line_password) {
+    password = in_edit_line_password;
 }
 
-QPushButton *auth_window::get_push_btn() {
-    return ui_auth->pushButton_sign_in;
+QString &auth_window::EditLine_login() {
+    return login;
 }
 
-void auth_window::sign_in_clicked() {
-    emit clicked();
+QString &auth_window::EditLine_password() {
+    return password;
 }
+
+void auth_window::on_sign_in_clicked() {
+    on_lineEdit_login(ui_auth->lineEdit_login->text());
+    on_lineEdit_password(ui_auth->lineEdit_password->text());
+    emit sign_in_clicked();
+}
+
