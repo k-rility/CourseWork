@@ -29,9 +29,17 @@
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(211, 215, 207);
-border: 2px solid rgb(211, 215, 207);
-border-radius:20px;</string>
+    <string notr="true">QPushButton{
+	color: rgb(211, 215, 207);
+	border: 2px solid rgb(211, 215, 207);
+	border-radius:20px;
+	background-color: rgb(63, 67, 68);
+	font: 13pt &quot;Ubuntu&quot;;
+}
+QPushButton::hover{
+	border: 2px solid rgb(85, 87, 83);
+	background-color: rgb(45, 47, 48)
+}</string>
    </property>
    <property name="text">
     <string>Regular customers</string>
@@ -46,10 +54,21 @@ border-radius:20px;</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(211, 215, 207);
-border: 2px solid rgb(211, 215, 207);
-border-radius:20px;</string>
+    <string notr="true">QPushButton{
+	color: rgb(211, 215, 207);
+	border: 2px solid rgb(211, 215, 207);
+	border-radius:20px;
+	background-color: rgb(63, 67, 68);
+	font: 13pt &quot;Ubuntu&quot;;
+}
+QPushButton::hover{
+	border: 2px solid rgb(85, 87, 83);
+	background-color: rgb(45, 47, 48)
+}</string>
    </property>
    <property name="text">
     <string>Booking</string>

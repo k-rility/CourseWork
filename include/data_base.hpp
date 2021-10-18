@@ -22,6 +22,8 @@ public:
 
     bool connect_to_data_base();
 
+    bool add_to_reg_customers_table();
+
 private:
     QSqlDatabase __data_base;
 };

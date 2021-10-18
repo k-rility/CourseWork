@@ -19,3 +19,13 @@ bool data_base::connect_to_data_base() {
     }
     return true;
 }
+
+bool data_base::add_to_reg_customers_table() {
+    //добавить ограничение, чтобы нельзя было добавлять еще одну ячейку в базу данных пока предыдущая не заполнена
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO regular_customers DEFAULT VALUES;");
+    if (!query.exec()) {
+        qDebug() << "Failed to add regular customers to the DataBase";
+    }
+}

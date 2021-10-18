@@ -6,8 +6,8 @@
 #include <QMessageBox>
 
 #include "include/auth_window.hpp"
-#include "include/reg_customers_window.hpp"
-#include "include/booking_window.hpp"
+#include "temp/reg_customers_window.hpp"
+#include "temp/booking_window.hpp"
 #include "include/data_base.hpp"
 
 namespace Ui {
@@ -35,6 +35,8 @@ public slots:
     void back_main_window_from_reg_customers();
 
     void back_main_window_from_booking();
+
+    void add_reg_customer();
 
 private:
     //user interface

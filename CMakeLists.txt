@@ -21,20 +21,20 @@ if (ANDROID)
             include/auth_window.hpp
             ui/auth_window.ui
 
-            sources/data_base.cpp
+            db/data_base.cpp
             include/data_base.hpp
 
             include/main_window.hpp
             sources/main_window.cpp
             ui/main_window.ui
 
-            include/reg_customers_window.hpp
-            sources/reg_customers_window.cpp
-            ui/reg_customers_window.ui
+#            temp/reg_customers_window.hpp
+#            temp/reg_customers_window.cpp
+#            temp/reg_customers_window.ui
 
-            include/booking_window.hpp
-            sources/booking_window.cpp
-            ui/booking_window.ui
+#            temp/booking_window.hpp
+#            temp/booking_window.cpp
+#            temp/booking_window.ui
 
             include/main_window_interface.hpp
             sources/main_window_interface.cpp
@@ -47,20 +47,20 @@ else ()
             include/auth_window.hpp
             ui/auth_window.ui
 
-            sources/data_base.cpp
+            db/data_base.cpp
             include/data_base.hpp
 
             include/main_window.hpp
             sources/main_window.cpp
             ui/main_window.ui
 
-            include/reg_customers_window.hpp
-            sources/reg_customers_window.cpp
-            ui/reg_customers_window.ui
+#            temp/reg_customers_window.hpp
+#            temp/reg_customers_window.cpp
+#            temp/reg_customers_window.ui
 
-            include/booking_window.hpp
-            sources/booking_window.cpp
-            ui/booking_window.ui
+#            temp/booking_window.hpp
+#            temp/booking_window.cpp
+#            temp/booking_window.ui
 
             include/main_window_interface.hpp
             sources/main_window_interface.cpp

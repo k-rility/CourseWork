@@ -11,8 +11,9 @@ main_window::main_window(QWidget *parent) : QMainWindow(parent), ui_main(new Ui:
     QObject::connect(&ui_reg_customers, &reg_customers_window::back_clicked, this,
                      &main_window::back_main_window_from_reg_customers);
     QObject::connect(&ui_book, &booking_window::back_clicked, this, &main_window::back_main_window_from_booking);
+    QObject::connect(&ui_reg_customers, &reg_customers_window::add_clicked, this, &main_window::add_reg_customer);
 
-    ui_reg_customers.setupModel("reg_customers", QStringList() << trUtf8("ID") << trUtf8("Regular customers"));
+    ui_reg_customers.setupModel("regular_customers", QStringList() << trUtf8("ID") << trUtf8("Regular customers"));
     ui_reg_customers.createUi();
 
     ui_book.setupModel("studios",
@@ -33,6 +34,10 @@ main_window::~main_window() {
 
 void main_window::auth_show() {
     ui_auth.show();
+}
+
+void main_window::add_reg_customer() {
+    __data_base.add_to_reg_customers_table();
 }
 
 void main_window::reg_customers_clicked() {

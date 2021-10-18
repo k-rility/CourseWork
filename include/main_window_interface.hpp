@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <QSqlTableModel>
+#include <QTableWidget>
+
+#include <QPushButton>
 
 namespace Ui { class main_window_interface; }
 
@@ -27,10 +30,32 @@ private slots:
 
     void back();
 
-private:
+protected:
     Ui::main_window_interface *ui;
     QSqlTableModel *model;
 };
 
+class reg_customers_window : public main_window_interface {
 
-#endif //COURSE_WORK_MAIN_WINDOW_INTERFACE_HPP
+Q_OBJECT
+
+public:
+
+    reg_customers_window(main_window_interface *parent = nullptr);
+
+signals:
+
+    void add_clicked();
+
+    void win_up();
+
+private slots:
+
+    void add();
+};
+
+class booking_window : public main_window_interface {
+};
+
+
+#endif //MAIN_WINDOW_INTERFACE_HPP
